@@ -1,8 +1,7 @@
-package jp.hiroki19990625.sample.actor;
+package jp.hiroki19990625.shooting_game.actor;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ActorManager {

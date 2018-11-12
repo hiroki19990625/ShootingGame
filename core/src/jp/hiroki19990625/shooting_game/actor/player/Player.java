@@ -1,11 +1,11 @@
-package jp.hiroki19990625.sample.actor.player;
+package jp.hiroki19990625.shooting_game.actor.player;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import jp.hiroki19990625.sample.actor.Actor;
-import jp.hiroki19990625.sample.actor.object.Beem;
+import jp.hiroki19990625.shooting_game.actor.Actor;
+import jp.hiroki19990625.shooting_game.actor.object.Beem;
 
 public class Player extends Actor {
     private final int SHOT_TIME = 10;

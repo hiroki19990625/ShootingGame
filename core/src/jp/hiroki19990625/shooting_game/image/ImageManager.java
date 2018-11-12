@@ -1,4 +1,4 @@
-package jp.hiroki19990625.sample.image;
+package jp.hiroki19990625.shooting_game.image;
 
 import com.badlogic.gdx.graphics.Texture;
 

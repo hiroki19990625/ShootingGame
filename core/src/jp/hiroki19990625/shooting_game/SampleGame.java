@@ -1,4 +1,4 @@
-package jp.hiroki19990625.sample;
+package jp.hiroki19990625.shooting_game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -11,10 +11,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import jp.hiroki19990625.sample.actor.ActorManager;
-import jp.hiroki19990625.sample.actor.object.EnemySpawner;
-import jp.hiroki19990625.sample.actor.player.Player;
-import jp.hiroki19990625.sample.image.ImageManager;
+import jp.hiroki19990625.shooting_game.actor.ActorManager;
+import jp.hiroki19990625.shooting_game.actor.object.EnemySpawner;
+import jp.hiroki19990625.shooting_game.actor.player.Player;
+import jp.hiroki19990625.shooting_game.image.ImageManager;
 
 public class SampleGame extends ApplicationAdapter {
     private static SampleGame _instance;
