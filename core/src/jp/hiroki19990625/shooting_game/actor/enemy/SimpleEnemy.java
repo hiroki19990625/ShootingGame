@@ -1,7 +1,7 @@
-package jp.hiroki19990625.sample.actor.enemy;
+package jp.hiroki19990625.shooting_game.actor.enemy;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import jp.hiroki19990625.sample.actor.Actor;
+import jp.hiroki19990625.shooting_game.actor.Actor;
 
 public class SimpleEnemy extends Actor {
     @Override

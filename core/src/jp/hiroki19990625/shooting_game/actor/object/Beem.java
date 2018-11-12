@@ -1,9 +1,8 @@
-package jp.hiroki19990625.sample.actor.object;
+package jp.hiroki19990625.shooting_game.actor.object;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
-import jp.hiroki19990625.sample.actor.Actor;
+import jp.hiroki19990625.shooting_game.actor.Actor;
 
 public class Beem extends Actor {
     @Override
