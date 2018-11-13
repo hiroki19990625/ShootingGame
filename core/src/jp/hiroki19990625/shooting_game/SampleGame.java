@@ -21,12 +21,12 @@ public class SampleGame extends ApplicationAdapter {
 
     public ImageManager img;
     public ActorManager actor;
+    public BitmapFont font;
+    public Player player;
 
     private SpriteBatch batch;
-    private BitmapFont font;
     private Camera camera;
     private Viewport viewport;
-    private Player player;
 
     public static SampleGame getInstance() {
         return _instance;

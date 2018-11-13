@@ -9,7 +9,7 @@ import jp.hiroki19990625.shooting_game.actor.enemy.SimpleEnemy;
 import java.util.Random;
 
 public class EnemySpawner extends Actor {
-    private final int SPAWN_MAX_TIME = 60;
+    private final int SPAWN_MAX_TIME = 20;
 
     private Random random;
     private int spawnTime;
@@ -23,8 +23,7 @@ public class EnemySpawner extends Actor {
     @Override
     public void render() {
         if (spawnTime >= SPAWN_MAX_TIME) {
-            SimpleEnemy enemy = new SimpleEnemy();
-            enemy.setPosition(new Vector2(getRandomX(), Gdx.graphics.getHeight()));
+            SimpleEnemy enemy = new SimpleEnemy(new Vector2(getRandomX(), Gdx.graphics.getHeight()));
             getActorManager().addActor(enemy);
 
             spawnTime = random.nextInt(20);
