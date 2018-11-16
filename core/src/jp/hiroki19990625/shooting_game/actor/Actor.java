@@ -3,15 +3,13 @@ package jp.hiroki19990625.shooting_game.actor;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
-import com.badlogic.gdx.math.Vector2;
 import jp.hiroki19990625.shooting_game.SampleGame;
 import jp.hiroki19990625.shooting_game.image.ImageManager;
 
 import java.util.Collection;
 
 public abstract class Actor {
-    protected Vector2 position = new Vector2(-5000, -5000);
-    protected Circle circle = new Circle(-5000, -5000, 0);
+    protected Circle circle = new Circle(0, 0, 0);
 
     private boolean isHit;
     private int hitActorHash;
@@ -36,13 +34,18 @@ public abstract class Actor {
         return SampleGame.getInstance().actor;
     }
 
-    public void updatePosition() {
-        circle.setPosition(position.x, position.y);
-    }
-
     public void updateCollision(Collection<Actor> actors) {
         for (Actor actor : actors) {
             if (isHit && hitActorHash != actor.hashCode()) {
+                if (Intersector.overlaps(circle, actor.circle)) {
+                    Actor old = getActorManager().getActor(hitActorHash);
+                    if (old != null) {
+                        old.onCollisionPass(actor);
+                    }
+
+                    onCollisionEnter(actor);
+                    hitActorHash = actor.hashCode();
+                }
                 continue;
             }
 

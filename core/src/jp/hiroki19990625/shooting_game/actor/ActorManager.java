@@ -14,7 +14,8 @@ public class ActorManager {
 
     public void removeActor(int hash) {
         Actor actor = actors.remove(hash);
-        actor.dispose();
+        if (actor != null)
+            actor.dispose();
     }
 
     public Actor getActor(int hash) {
@@ -24,7 +25,6 @@ public class ActorManager {
     public void callRender() {
         for (Actor actor : actors.values()) {
             actor.render();
-            actor.updatePosition();
             actor.updateCollision(actors.values().stream().filter(ac -> {
                 return ac.hashCode() != actor.hashCode();
             }).collect(Collectors.toList()));

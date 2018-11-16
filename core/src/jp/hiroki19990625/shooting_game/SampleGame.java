@@ -16,12 +16,15 @@ import jp.hiroki19990625.shooting_game.actor.object.EnemySpawner;
 import jp.hiroki19990625.shooting_game.actor.player.Player;
 import jp.hiroki19990625.shooting_game.image.ImageManager;
 
+import java.util.Random;
+
 public class SampleGame extends ApplicationAdapter {
     private static SampleGame _instance;
 
     public ImageManager img;
     public ActorManager actor;
     public BitmapFont font;
+    public Random random;
     public Player player;
 
     private SpriteBatch batch;
@@ -50,6 +53,7 @@ public class SampleGame extends ApplicationAdapter {
 
         img = new ImageManager();
         actor = new ActorManager();
+        random = new Random();
 
         player = new Player();
         actor.addActor(player);

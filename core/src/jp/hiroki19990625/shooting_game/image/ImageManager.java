@@ -11,6 +11,7 @@ public class ImageManager {
         loadImage("player.png", "player");
         loadImage("beem.png", "beem");
         loadImage("simple_enemy.png", "simple_enemy");
+        loadImage("boss.png", "boss");
     }
 
     public void loadImage(String path) {

@@ -22,24 +22,24 @@ public class Player extends Actor {
 
     @Override
     public void create() {
-        position = new Vector2((Gdx.graphics.getWidth() - getImageManager().getImage("player").getWidth()) / 2, 20);
+        circle.setPosition((Gdx.graphics.getWidth() - getImageManager().getImage("player").getWidth()) / 2, 20);
         circle.radius = getImageManager().getImage("player").getWidth() / 2;
     }
 
     @Override
     public void render() {
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            if ((position.x - 5) >= 0) {
-                position.add(-5, 0);
+            if ((circle.x - 5) >= 0) {
+                circle.x -= 5;
             }
         } else if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            if (position.x <= Gdx.graphics.getWidth() - getImageManager().getImage("player").getWidth()) {
-                position.add(5, 0);
+            if (circle.x <= Gdx.graphics.getWidth() - getImageManager().getImage("player").getWidth()) {
+                circle.x += 5;
             }
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && shotTime >= SHOT_TIME && !isGameOver) {
-            Vector2 offset = position.cpy();
+            Vector2 offset = new Vector2(circle.x, circle.y);
             offset.add(0, getImageManager().getImage("beem").getWidth());
             Beem beem = new Beem(offset);
             getActorManager().addActor(beem);
@@ -57,7 +57,7 @@ public class Player extends Actor {
         if (isGameOver) {
             font.draw(batch, "GameOver", gs.getWidth() / 2, gs.getHeight() / 2);
         } else {
-            batch.draw(getImageManager().getImage("player"), position.x, position.y);
+            batch.draw(getImageManager().getImage("player"), circle.x, circle.y);
         }
 
         if (isShowDamageText) {
@@ -70,8 +70,8 @@ public class Player extends Actor {
             }
         }
 
-        font.draw(batch, "zannki: " + zannki, 10, gs.getHeight());
-        font.draw(batch, "killCount: " + killCount, 10, gs.getHeight() - 20);
+        font.draw(batch, "zannki: " + zannki, 10, gs.getHeight() - 20);
+        font.draw(batch, "killCount: " + killCount, 10, gs.getHeight() - 35);
     }
 
     @Override
